@@ -167,36 +167,19 @@ questions:
     label: "Ingress Annotations"
     required: false
     type: string
-  - variable: ingress.tls[0].hosts[0]
+  - variable: ingress.tls[0].hosts
     default: "chart-example.local"
     description: "DNS name at which the RMT service will be accessible from clients"
-    label: "Ingress Hosts"
+    label: "TLS Cert Valid Ingress Hosts"
     required: true
     type: hostname
   - variable: ingress.tls[0].secretName
     default: "rmt-cert"
     description: "RMT Certificate"
-    label: "Ingress Hosts"
+    label: "TLS Ingress Certificate"
     required: false
     type: string
-  - variable: serviceAccount.annotations
-    default: {}
-    description: "Service Account Annotations"
-    label: "Service Account Annotations"
-    required: false
-    type: string
-  - variable: serviceAccount.create
-    default: true
-    description: "RMT Certificate"
-    label: "Ingress Hosts"
-    required: false
-    type: boolean
-  - variable: serviceAccount.name
-    default: 
-    description: "Service Account Name"
-    label: "Service Account Name"
-    required: false
-    type: string
+
 
 # Misc Configuration
 
@@ -316,6 +299,27 @@ questions:
   default: "15.4"
   description: "RMT Image Tag"
   label: "RMT Image Tag"
+  required: false
+  type: string
+  group: "Misc"
+- variable: serviceAccount.annotations
+  default: {}
+  description: "Service Account Annotations"
+  label: "Service Account Annotations"
+  required: false
+  type: string
+  group: "Misc"
+- variable: serviceAccount.create
+  default: true
+  description: "RMT Certificate"
+  label: "Ingress Hosts"
+  required: false
+  type: boolean
+  group: "Misc"
+- variable: serviceAccount.name
+  default: 
+  description: "Service Account Name"
+  label: "Service Account Name"
   required: false
   type: string
   group: "Misc"
