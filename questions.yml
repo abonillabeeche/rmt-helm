@@ -162,11 +162,11 @@ questions:
     required: false
     type: string
   - variable: ingress.annotations
-    default: 
+    default: ""
     description: "Ingress Annotations"
     label: "Ingress Annotations"
     required: false
-    type: string
+    type: multiline
   - variable: ingress.tls.0.hosts
     default: "chart-example.local"
     description: "DNS name at which the RMT service will be accessible from clients"
@@ -303,11 +303,11 @@ questions:
   type: string
   group: "Misc"
 - variable: serviceAccount.annotations
-  default: {}
+  default: 
   description: "Service Account Annotations"
   label: "Service Account Annotations"
   required: false
-  type: string
+  type: multiline
   group: "Misc"
 - variable: serviceAccount.create
   default: true
