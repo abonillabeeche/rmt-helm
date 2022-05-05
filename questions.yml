@@ -143,13 +143,13 @@ questions:
   show_subquestion_if: true
   group: "Ingress"
   subquestions:
-  - variable: ingress.hosts[0].host
+  - variable: ingress.hosts.host
     default: "chart-example.local"
     description: "DNS name at which the RMT service will be accessible from clients"
     label: "Ingress Hosts"
     required: true
     type: hostname
-  - variable: ingress.hosts[0].paths[0].path
+  - variable: ingress.hosts.paths.path
     default: "/"
     description: "DNS path at which the RMT service will be accessible from clients"
     label: "Ingress Path"
@@ -162,18 +162,18 @@ questions:
     required: false
     type: string
   - variable: ingress.annotations
-    default: {}
+    default: 
     description: "Ingress Annotations"
     label: "Ingress Annotations"
     required: false
     type: string
-  - variable: ingress.tls[0].hosts
+  - variable: ingress.tls.hosts
     default: "chart-example.local"
     description: "DNS name at which the RMT service will be accessible from clients"
     label: "TLS Cert Valid Ingress Hosts"
     required: true
     type: hostname
-  - variable: ingress.tls[0].secretName
+  - variable: ingress.tls.secretName
     default: "rmt-cert"
     description: "RMT Certificate"
     label: "TLS Ingress Certificate"
