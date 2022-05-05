@@ -303,7 +303,7 @@ questions:
   type: string
   group: "Misc"
 - variable: serviceAccount.annotations
-  default: 
+  default: ""
   description: "Service Account Annotations"
   label: "Service Account Annotations"
   required: false
@@ -317,7 +317,7 @@ questions:
   type: boolean
   group: "Misc"
 - variable: serviceAccount.name
-  default: 
+  default: ""
   description: "Service Account Name"
   label: "Service Account Name"
   required: false
