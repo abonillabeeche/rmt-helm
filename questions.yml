@@ -197,6 +197,27 @@ questions:
   required: false
   type: string
   group: "Misc"
+- variable: serviceAccount.create
+  default: true
+  description: "Create Service Account"
+  label: "Create Service Account"
+  required: false
+  type: boolean
+  group: "Misc"
+- variable: serviceAccount.name
+  default: ""
+  description: "Service Account Name"
+  label: "Service Account Name"
+  required: false
+  type: string
+  group: "Misc"
+- variable: serviceAccount.annotations
+  default: ""
+  description: "Service Account Annotations"
+  label: "Service Account Annotations"
+  required: false
+  type: string
+  group: "Misc"
 - variable: app.image.pullPolicy
   default: "Always"
   description: "Image Pull Policy"
@@ -299,27 +320,6 @@ questions:
   default: "15.4"
   description: "RMT Image Tag"
   label: "RMT Image Tag"
-  required: false
-  type: string
-  group: "Misc"
-- variable: serviceAccount.annotations
-  default: ""
-  description: "Service Account Annotations"
-  label: "Service Account Annotations"
-  required: false
-  type: string
-  group: "Misc"
-- variable: serviceAccount.create
-  default: true
-  description: "Create Service Account"
-  label: "Create Service Account"
-  required: false
-  type: boolean
-  group: "Misc"
-- variable: serviceAccount.name
-  default: ""
-  description: "Service Account Name"
-  label: "Service Account Name"
   required: false
   type: string
   group: "Misc"
