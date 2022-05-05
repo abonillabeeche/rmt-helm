@@ -311,8 +311,8 @@ questions:
   group: "Misc"
 - variable: serviceAccount.create
   default: true
-  description: "RMT Certificate"
-  label: "Ingress Hosts"
+  description: "Create Service Account"
+  label: "Create Service Account"
   required: false
   type: boolean
   group: "Misc"
