@@ -166,13 +166,13 @@ questions:
     description: "Ingress Annotations"
     label: "Ingress Annotations"
     required: false
-    type: multiline
+    type: string
   - variable: ingress.tls.0.hosts
     default: "chart-example.local"
     description: "DNS name at which the RMT service will be accessible from clients"
     label: "TLS Cert Valid Ingress Hosts"
     required: true
-    type: hostname
+    type: string
   - variable: ingress.tls.0.secretName
     default: "rmt-cert"
     description: "RMT Certificate"
@@ -307,7 +307,7 @@ questions:
   description: "Service Account Annotations"
   label: "Service Account Annotations"
   required: false
-  type: multiline
+  type: string
   group: "Misc"
 - variable: serviceAccount.create
   default: true
