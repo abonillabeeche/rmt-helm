@@ -21,7 +21,7 @@ questions:
 
 - variable: app.service.port
   default: 4224
-  description: "Default RMT server port"
+  description: "Default RMT pod server port"
   label: "RMT Server port"
   required: false
   type: int
@@ -34,7 +34,7 @@ questions:
   type: storageclass
   group: "RMT"
 - variable: app.storage.size
-  default: "30000Mi"
+  default: "30Gi"
   description: "RMT Storage Volume - This will hold all Packages"
   label: "RMT Server Storage Volume"
   required: false
@@ -118,14 +118,14 @@ questions:
   type: int
   group: "Database"
 - variable: db.storage.class
-  default: "local-path"
+  default: 
   description: "DB StorageClass"
   label: "DB StorageClass"
   required: false
   type: storageclass
   group: "Database"
 - variable: db.storage.size
-  default: "100Mi"
+  default: "10Gi"
   description: "DB Storage Volume"
   label: "DB Storage Volume"
   required: false
@@ -166,7 +166,7 @@ questions:
     description: "DNS name at which the RMT service will be accessible from clients"
     label: "Ingress Hosts"
     required: true
-    type: string
+    type: hostname
   - variable: ingress.tls[0].secretName
     default: "rmt-cert"
     description: "RMT Certificate"
