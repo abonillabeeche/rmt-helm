@@ -8,34 +8,34 @@ questions:
   label: "SCC Password"
   required: true
   type: string
-  group: "SCC"
+  group: "SUSE Customer Center"
 - variable: app.scc.username
   default: 
   description: "SCC Username"
   label: "SCC Username"
   required: true
   type: string
-  group: "SCC"
+  group: "SUSE Customer Center"
 
 #RMT Configuration
 
 - variable: app.service.port
   default: 4224
-  description: "RMT server port"
+  description: "Default RMT server port"
   label: "RMT Server port"
   required: false
   type: int
   group: "RMT"
 - variable: app.storage.class
-  default: "local-path"
+  default: 
   description: "Storage Class"
   label: "Storage Class"
   required: false
   type: storageclass
   group: "RMT"
 - variable: app.storage.size
-  default: "300Mi"
-  description: "RMT Storage Volume - Varies greatly"
+  default: "30000Mi"
+  description: "RMT Storage Volume - This will hold all Packages"
   label: "RMT Server Storage Volume"
   required: false
   type: string
@@ -52,7 +52,7 @@ questions:
   group: "Database"
   subquestions:
   - variable: db.autoscaling.maxReplicas
-    default: "100"
+    default: "10"
     description: "DB Max Replicas"
     label: "DB Max Replicas"
     required: false
@@ -77,7 +77,7 @@ questions:
 
 - variable: app.mysql.host
   default: 
-  description: "mysql host to connect to (default target is db container)"
+  description: "Custom mysql host to connect to (default target is db container)"
   label: "mysql host to connect to"
   required: false
   type: string
@@ -105,7 +105,7 @@ questions:
   group: "Database"
 - variable: db.mysql.user
   default: "rmt"
-  description: "Db Username"
+  description: "DB Username"
   label: "DB Username"
   required: false
   type: string
@@ -148,7 +148,7 @@ questions:
     description: "DNS name at which the RMT service will be accessible from clients"
     label: "Ingress Hosts"
     required: true
-    type: string
+    type: multiline
   - variable: front.service.port
     default: "80"
     description: "Nginx Service Port"
